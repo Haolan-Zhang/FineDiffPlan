@@ -1,0 +1,36 @@
+# Ignore log files in the root directory
+*.log
+
+# macOS Finder files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Python cache files
+__pycache__/
+
+# Ignore everything under the results folder
+results/
+
+# Igonre everything under the data folder
+dataset/
+
+# Ignore everything under the fid_images folder
+fid_images/
+
+# Igonre everything under the generated_images folder
+generated_images/
+
+# Ignore everything under the Flux_vae folder
+Flux_vae/*
+
+# Ignore everything under the .ipynb_checkpoints folder
+.ipynb_checkpoints/
+
+# Ignore everything under the notebooks folder
+notebooks/*
+
+revision/*
+
+revision_old/*
