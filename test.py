@@ -6,7 +6,7 @@ from torchvision.utils import save_image
 from diffusion import create_diffusion
 from diffusers.models import AutoencoderKL
 from utils.download import find_model
-from models import DiT_XL_4, DiT_L_4
+from models import DiT_XL_4
 from PIL import Image
 from IPython.display import display
 from torch.utils.data import DataLoader
