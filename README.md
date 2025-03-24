@@ -31,15 +31,11 @@ Once downloaded, place the model file in the ckpt/ directory.
 
 ## Sampling
 
----
-
 ```bash
 python test.py
 ```
 
 ## Post-Processing (Extract Input Conditions)
-
----
 
 ```bash
 python utils/post_process.py
