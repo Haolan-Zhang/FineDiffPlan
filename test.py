@@ -120,7 +120,7 @@ if __name__ == "__main__":
     # data_path = '/home/donaldtrump/haolan/msd_dataset/DIT_data_9/test'
 
     # model_path = 'results/opening/0066000.pt'
-    model_path = '/home/donaldtrump/haolan/DiT-clean/results/009-DiT-XL-4-all_cond-512/0192000.pt'
+    model_path = 'ckpt/0192000.pt'
     # model_path = 'results/new_all_cond/0030000.pt'
     # model_path = 'results/009-DiT-XL-4-all_cond-512/0192000.pt'
 
