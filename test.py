@@ -117,13 +117,8 @@ if __name__ == "__main__":
     seed = 10
 
     data_path = 'examples'
-    # data_path = '/home/donaldtrump/haolan/msd_dataset/DIT_data_9/test'
-
-    # model_path = 'results/opening/0066000.pt'
     model_path = 'ckpt/0192000.pt'
-    # model_path = 'results/new_all_cond/0030000.pt'
-    # model_path = 'results/009-DiT-XL-4-all_cond-512/0192000.pt'
-
+    # model_path = '/home/donaldtrump/haolan/DiT-clean/results/009-DiT-XL-4-all_cond-512/0192000.pt'
     vae_model = "stabilityai/sd-vae-ft-ema"
     model_name = "test_model"
     model_step_name = model_path.split('/')[2].split('.')[0]
@@ -136,4 +131,4 @@ if __name__ == "__main__":
     # move the log file to the save_dir
     os.rename('output.log', f'{save_dir}/output_{model_step_name}.log')
     # fix the BGR images (optional)
-    fix_images_in_directory(f'{save_dir}/samples', f'{save_dir}/samples')
+    fix_images_in_directory(f'{save_dir}/samples_{seed}', f'{save_dir}/samples_{seed}')
