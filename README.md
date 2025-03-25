@@ -22,10 +22,10 @@ conda activate finediffplan
 ```
 
 ### 3. Download Pretrained Model
-Download the pretrained model from the following link (expires Apr.24th, with limited capability):
+Download the pretrained model by filling the anonymous form (expires Apr.24th, with limited capability):
 
 ```bash
-https://virginiatech-my.sharepoint.com/:u:/g/personal/haolanz_vt_edu/EcnGy1uxcSNEpn1oBST3j2sBw3b8s3gk8uguwfrgpfxdBA?e=YgV9D5
+https://forms.office.com/r/tihwZQ0GLE
 ```
 Once downloaded, place the model file in the ckpt/ directory. 
 
