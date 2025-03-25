@@ -12,7 +12,7 @@ This project is built with Python and PyTorch. We recommend using `conda` to man
 
 ```bash
 git clone  https://github.com/Haolan-Zhang/FineDiffPlan.git
-cd floorplan-gen
+cd FineDiffPlan
 ```
 
 ### 2. Create the Conda Environment
