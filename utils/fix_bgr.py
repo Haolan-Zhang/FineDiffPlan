@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # fix_images_in_directory(f'/home/donaldtrump/haolan/FlexiFloor/generated_images/less_cond_50/cond', f'/home/donaldtrump/haolan/FlexiFloor/generated_images/less_cond_50/cond')
     # fix_images_in_directory(f'/home/donaldtrump/haolan/FlexiFloor/generated_images/less_cond_20/cond', f'/home/donaldtrump/haolan/FlexiFloor/generated_images/less_cond_20/cond')
     # fix_images_in_directory(f'/home/donaldtrump/haolan/FlexiFloor/generated_images/less_cond_20/samples', f'/home/donaldtrump/haolan/FlexiFloor/generated_images/less_cond_20/samples')
-    fix_images_in_directory(f'revision', f'revision')
+    fix_images_in_directory(f'examples', f'examples')
 
 
     

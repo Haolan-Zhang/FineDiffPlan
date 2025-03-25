@@ -54,26 +54,13 @@ def get_dataloader(data_path, transform, batch_size=32, img_size=256):
 
 def save_images(samples, cond, image, save_dir, save_dir_batched, img_path, seed, i, n, samples_per_row):
     os.makedirs(f'{save_dir}/samples_{seed}', exist_ok=True)
-    os.makedirs(f'{save_dir}/cond', exist_ok=True)
-    os.makedirs(f'{save_dir}/gt', exist_ok=True)
     os.makedirs(f'{save_dir_batched}/samples_{seed}', exist_ok=True)
-    os.makedirs(f'{save_dir_batched}/cond', exist_ok=True)
-    os.makedirs(f'{save_dir_batched}/gt', exist_ok=True)
 
     for j in range(n):
         save_image(samples[j], os.path.join(f'{save_dir}/samples_{seed}', f"{os.path.basename(img_path[j])}"), normalize=True, value_range=(-1, 1))
-        save_image(cond[j], os.path.join(f'{save_dir}/cond', f"{os.path.basename(img_path[j])}"), normalize=True, value_range=(-1, 1))
-        save_image(image[j], os.path.join(f'{save_dir}/gt', f"{os.path.basename(img_path[j])}"), normalize=True, value_range=(-1, 1))
     
     save_image(samples, f"{save_dir_batched}/samples_{seed}/sample_seed{seed}_{i}.png", nrow=int(samples_per_row), 
                normalize=True, value_range=(-1, 1))
-    # display(Image.open(f"{save_dir_batched}/samples/sample_seed{seed}_{i}.png"))
-    save_image(cond, f"{save_dir_batched}/cond/cond_seed{seed}_{i}.png", nrow=int(samples_per_row),
-               normalize=True, value_range=(-1, 1))
-    # display(Image.open(f"{save_dir_batched}/cond/cond_seed{seed}_{i}.png"))
-    save_image(image, f"{save_dir_batched}/gt/gt_{i}.png", nrow=int(samples_per_row),
-               normalize=True, value_range=(-1, 1))
-    # display(Image.open(f"{save_dir_batched}/gt/gt_{i}.png"))
     logger.info(f"Images saved for iteration {i}")
 
 def main(data_path, model_path, vae_model, save_dir, save_dir_batched, batch_size=32, img_size=256, seed=10):
@@ -129,18 +116,16 @@ def main(data_path, model_path, vae_model, save_dir, save_dir_batched, batch_siz
 if __name__ == "__main__":
     seed = 10
 
-    data_path = '/home/donaldtrump/haolan/msd_dataset/DiT_opening/test'
-    data_path = '/home/donaldtrump/haolan/msd_dataset/DiT_csv_1024/test'
-    data_path = 'revision'
+    data_path = 'examples'
     # data_path = '/home/donaldtrump/haolan/msd_dataset/DIT_data_9/test'
 
     # model_path = 'results/opening/0066000.pt'
-    model_path = '/home/donaldtrump/haolan/DiT/results/009-DiT-XL-4-all_cond-512/0192000.pt'
+    model_path = '/home/donaldtrump/haolan/DiT-clean/results/009-DiT-XL-4-all_cond-512/0192000.pt'
     # model_path = 'results/new_all_cond/0030000.pt'
     # model_path = 'results/009-DiT-XL-4-all_cond-512/0192000.pt'
 
     vae_model = "stabilityai/sd-vae-ft-ema"
-    model_name = model_path.split('/')[1]
+    model_name = "test_model"
     model_step_name = model_path.split('/')[2].split('.')[0]
     save_dir = 'fid_images/' + model_name
     save_dir_batched = 'generated_images/' + model_name
@@ -148,11 +133,7 @@ if __name__ == "__main__":
     os.makedirs(save_dir_batched, exist_ok=True)
     logger.info("Starting main process")
     main(data_path, model_path, vae_model, save_dir, save_dir_batched, batch_size=1, img_size=512, seed=seed)
-    fid_score = compute_fid(f'{save_dir}/gt', f'{save_dir}/samples_{seed}')
-    logger.info(f"FID score: {fid_score}")
     # move the log file to the save_dir
     os.rename('output.log', f'{save_dir}/output_{model_step_name}.log')
     # fix the BGR images (optional)
-    # fix_images_in_directory(f'{save_dir}/gt', f'{save_dir}/gt')
-    # fix_images_in_directory(f'{save_dir}/samples', f'{save_dir}/samples')
-    # fix_images_in_directory(f'{save_dir}/cond', f'{save_dir}/cond')
+    fix_images_in_directory(f'{save_dir}/samples', f'{save_dir}/samples')

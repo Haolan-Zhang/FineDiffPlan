@@ -22,10 +22,10 @@ conda activate finediffplan
 ```
 
 ### 3. Download Pretrained Model
-Download the pretrained model from the following link:
+Download the pretrained model from the following link (expires Apr.24th, with limited capability):
 
 ```bash
-[]
+https://virginiatech-my.sharepoint.com/:u:/g/personal/haolanz_vt_edu/EcnGy1uxcSNEpn1oBST3j2sBw3b8s3gk8uguwfrgpfxdBA?e=YgV9D5
 ```
 Once downloaded, place the model file in the ckpt/ directory. 
 
@@ -34,9 +34,11 @@ Once downloaded, place the model file in the ckpt/ directory.
 ```bash
 python test.py
 ```
+There will be a few new directories appear and contains the result.
 
-## Post-Processing (Extract Input Conditions)
+## Post-Processing (Extract Input Conditions )
 
 ```bash
 python utils/post_process.py
 ```
+Then the result image will appear under the directory.
